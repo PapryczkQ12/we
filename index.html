@@ -1,0 +1,318 @@
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./assets/index.css">
+    <link rel="icon" type="image/x-icon" href="https://play-lh.googleusercontent.com/_TNbiYKasPy_isTSEg2_UEzVaev4F8fO2lLunsHJ8_Ux2g3OzkSZyzpqvJG1woSj-WD4=w240-h480-rw">
+    <title>mObywatel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
+    <style>
+        .login-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #024A94, #0367c4);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            width: 85%;
+            max-width: 400px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        .login-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+        .login-logo img {
+            width: 60px;
+            height: auto;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+        .login-logo span {
+            margin-left: 15px;
+            font-weight: 700;
+            font-size: 32px;
+            color: #024A94;
+        }
+        .login-welcome {
+            font-weight: 700;
+            font-size: 34px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #1a1a1a;
+        }
+        .login-box {
+            margin: 15px 0;
+        }
+        .login-box label {
+            display: block;
+            margin-bottom: 8px;
+            color: #666;
+            font-size: 14px;
+        }
+        .login-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e1e1e1;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+            box-sizing: border-box;
+        }
+        .login-input:focus {
+            border-color: #024A94;
+            outline: none;
+            background: white;
+        }
+        .login-btn {
+            background: #024A94;
+            color: white;
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 25px;
+            cursor: pointer;
+            transition: transform 0.2s ease, background 0.3s ease;
+        }
+        .login-btn:hover {
+            background: #0367c4;
+            transform: translateY(-2px);
+        }
+        .login-btn:active {
+            transform: translateY(0);
+        }
+        .error-message {
+            color: #dc3545;
+            display: none;
+            margin-top: 12px;
+            text-align: center;
+            font-size: 14px;
+            padding: 8px;
+            background: #fff1f1;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-container">
+            <div class="login-logo">
+                <img src="https://i.imgur.com/wEDerI2.png">
+                <span>mObywatel</span>
+            </div>
+            <h1 class="login-welcome">Dzień dobry!</h1>
+            <div class="login-box">
+                <label for="password">Hasło:</label>
+                <input type="password" id="password" class="login-input">
+                <p id="error" class="error-message">Nieprawidłowe hasło</p>
+            </div>
+            <button class="login-btn" onclick="checkPassword()">Zaloguj się</button>
+        </div>
+    </div>
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            const error = document.getElementById('error');
+            const overlay = document.getElementById('loginOverlay');
+            
+            if (password === 'Ala789!@#') {
+                overlay.style.display = 'none';
+            } else {
+                error.style.display = 'block';
+            }
+        }
+
+        // Update welcome message based on time of day
+        const hour = new Date().getHours();
+        if (hour >= 18) {
+            document.querySelector('.login-welcome').textContent = 'Dobry wieczór!';
+        }
+
+        // Prevent access to main content
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+                e.preventDefault();
+            }
+        });
+    </script>
+    <div class="theme-toggle">
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="theme-panel">
+        <h3>Wybierz motyw</h3>
+        <div class="theme-options">
+            <div class="theme-option" data-theme="default">
+                <div class="color-preview"></div>
+                <span>Domyślny</span>
+            </div>
+            <div class="theme-option" data-theme="dark">
+                <div class="color-preview"></div>
+                <span>Ciemny</span>
+            </div>
+            <div class="theme-option" data-theme="neon">
+                <div class="color-preview"></div>
+                <span>Neon</span>
+            </div>
+            <div class="theme-option" data-theme="gradient">
+                <div class="color-preview"></div>
+                <span>Gradient</span>
+            </div>
+        </div>
+    </div>
+    <img src="https://play-lh.googleusercontent.com/_TNbiYKasPy_isTSEg2_UEzVaev4F8fO2lLunsHJ8_Ux2g3OzkSZyzpqvJG1woSj-WD4" class="logo">
+
+<div class="header-container">
+    <p class="logo_text">mObywatel Maker</p>
+</div>
+<div class="button-container">
+    <a class="generate-btn">Generuj</a>
+    <a class="clear-btn">Wyczyść</a>
+</div>
+
+    <p class="warning">Uwaga! Strona służy wyłącznie do generowania atrap dowodów osobistych w celach rozrywkowych. Wygenerowane dokumenty nie mają wartości prawnej i nie mogą być używane jako dokument tożsamości. Autor strony nie ponosi żadnej odpowiedzialności za niewłaściwe wykorzystanie narzędzia.</p>
+
+    <div class="input_holder">
+        <div class="input-wrapper">
+            <input type="text" id="image" class="input" placeholder="">
+            <img src="assets/images/unnamed.png" class="upload-icon" onclick="document.getElementById('file-upload').click()">
+        </div>
+        <span class="placeholder">Link do zdjęcia (imgur)</span>
+        <p class="error">To pole jest wymagane</p>
+        <input type="file" id="file-upload" accept="image/*" style="display: none">
+    </div>
+
+    <div class="image-preview-modal">
+        <div class="image-preview-content">
+            <button class="close-preview">×</button>
+            <img class="preview-image" src="" alt="Podgląd">
+        </div>
+    </div>
+
+    <div class="input_holder">
+        <input type="text" id="name" class="input" placeholder="">
+        <span class="placeholder">Imię (imiona)</span>
+        <p class="error">To pole jest wymagane</p>
+    </div>
+
+    <div class="input_holder">
+        <input type="text" id="surname" class="input" placeholder="">
+        <span class="placeholder">Nazwisko</span>
+        <p class="error">To pole jest wymagane</p>
+    </div>
+
+    <p class="top_info">Płeć</p>
+    <div class="selector_box">
+        <div class="selected_grid">
+            <p class="selector_text selected_text">Mężczyzna</p>
+            <img class="selected_arrow" src="https://i.imgur.com/RXsdBB6.png">
+        </div>
+        <div class="option_box">
+            <div class="selector_option" id="m">
+                Mężczyzna
+            </div>
+            <div class="selector_option" id="k">
+                Kobieta
+            </div>
+        </div>
+    </div>
+
+    <div class="date">
+        <p class="top_info">Data urodzenia</p>
+        <div class="date_grid">
+            <input class="date_input" placeholder="DD" type="number">
+
+            </input>
+            <input class="date_input" placeholder="MM" type="number">
+
+            </input>
+            <input class="date_input" placeholder="YYYY" type="number">
+
+            </input>
+        </div>
+        <p class="error">Wprowadź prawidłową datę</p>
+    </div>
+
+    <div class="input_holder">
+        <input type="text" id="nationality" class="input" placeholder="">
+        <span class="placeholder">Obywatelstwo</span>
+        <p class="error">To pole jest wymagane</p>
+    </div>
+
+    <div class="input_holder">
+        <input type="text" id="familyName" class="input" placeholder="">
+        <span class="placeholder">Nazwisko rodowe</span>
+        <p class="error">To pole jest wymagane</p>
+    </div>
+
+    <div class="input_holder">
+        <input type="text" id="fathersFamilyName" class="input" placeholder="">
+        <span class="placeholder">Nazwisko rodowe ojca</span>
+        <p class="error">To pole jest wymagane</p>
+    </div>
+
+    <div class="input_holder">
+        <input type="text" id="mothersFamilyName" class="input" placeholder="">
+        <span class="placeholder">Nazwisko rodowe matki</span>
+        <p class="error">To pole jest wymagane</p>
+    </div>
+
+    <p class="subtext">Miejsce zamieszkania</p>
+
+    <div class="input_holder">
+        <input type="text" id="birthPlace" class="input" placeholder="">
+        <span class="placeholder">Miejsce urodzenia</span>
+        <p class="error">To pole jest wymagane</p>
+    </div>
+
+    <div class="input_holder">
+        <input type="text" id="countryOfBirth" class="input" placeholder="">
+        <span class="placeholder">Kraj urodzenia</span>
+        <p class="error">To pole jest wymagane</p>
+    </div>
+
+    <div class="input_holder">
+        <input type="text" id="adress1" class="input" placeholder="">
+        <span class="placeholder">Ulica i numer domu</span>
+        <p class="error">To pole jest wymagane</p>
+    </div>
+
+    <div class="input_holder">
+        <input type="text" id="adress2" class="input" placeholder="">
+        <span class="placeholder">Kod pocztowy</span>
+        <p class="error">To pole jest wymagane</p>
+    </div>
+
+    <div class="input_holder">
+        <input type="text" id="city" class="input" placeholder="">
+        <span class="placeholder">Miasto</span>
+        <p class="error">To pole jest wymagane</p>
+    </div>
+
+    <a class="go">wejdź</a>
+    <div class="instagram" onclick="window.open('https://www.instagram.com/deyyv.v/')">
+        <div class="inner_grid">
+            <img class="instagram_image" src="https://i.imgur.com/JCi3FSA.png">
+            <p class="instagram_text">Zaobserwój mnie na instagramie</p>
+        </div>
+    </div>
+
+    <script src="./assets/index.js"></script>
+    <script src="./assets/manifest.js"></script>
+</body>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>mObywatel</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="opcjeshow/show.css?v=2.0">
+    <link rel="stylesheet" href="opcjeshow/main.css?v=2.2">
+    <link rel="icon" type="image/x-icon" href="https://i.imgur.com/gC8DDHD.png">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/gC8DDHD.png">
+    <link rel="shortcut icon" href="https://i.imgur.com/gC8DDHD.png">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+</head>
+
+<body>
+    <div class="top_grid_fixed">
+        <div class="action_grid_fixed">
+            <img src="https://i.imgur.com/MBLAM9x.png" class="back_img_fixed">
+            <p onclick="sendTo('qr')" class="back_text_fixed">Kod QR</p>
+        </div>
+        <p class="title_text_fixed">Kod QR</p>
+        <img src="https://i.imgur.com/YQ6jvg7.png" class="help_img_fixed">
+    </div>
+
+    <div class="bottom_bar">
+        <div class="bottom_bar_grid">
+            <div class="bottom_element_grid" send="home">
+                <div class="bottom_element_image home"></div>
+                <p class="bottom_element_text">Pulpit</p>
+            </div>
+            <div class="bottom_element_grid" send="documents">
+                <div class="bottom_element_image documents"></div>
+                <p class="bottom_element_text">Dokumenty</p>
+            </div>
+            <div class="bottom_element_grid" send="services">
+                <div class="bottom_element_image services"></div>
+                <p class="bottom_element_text">Usługi</p>
+            </div>
+            <div class="bottom_element_grid" send="qr">
+                <div class="bottom_element_image qr qr_open"></div>
+                <p class="bottom_element_text open">Kod QR</p>
+            </div>
+            <div class="bottom_element_grid" send="more">
+                <div class="bottom_element_image more"></div>
+                <p class="bottom_element_text">Więcej</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <p class="show_title">Pokaż kod QR osobie, której dokument sprawdzasz</p>
+        <p class="show_description">Gdy ta osoba zeskanuje lub wpisze kod, jej dane pojawią się na Twoim telefonie</p>
+        <div class="frame">
+            <img class="qr_image" src="https://i.imgur.com/MT1VRnT.png">
+            <p class="numbers"></p>
+            <div class="loading">
+                <div class="loading_bar"></div>
+            </div>
+            <p class="expire"><span class="expire_light">Kod wygaśnie za: </span><span class="expire_highlight"></span></p>
+        </div>
+        <div class="frame bottom_frame">
+            <img class="frame_image" src="https://i.imgur.com/aJaNFoG.png">
+            <img class="frame_image" src="https://i.imgur.com/u73C01k.png">
+        </div>
+    </div>
+
+    <script src="opcjeshow/bar.js?v=2.1"></script>
+    <script src="opcjeshow/show.js?v=2.2"></script>
+    <script src="opcjeshow/manifest.js"></script>
+
+    </body>
